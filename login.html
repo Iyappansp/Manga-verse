@@ -33,16 +33,16 @@
                 <input type="email" class="form-control w-full rounded-xl p-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-manga-primary focus:border-transparent transition-all outline-none" placeholder="name@example.com" required>
             </div>
             <div>
-                <div class="flex justify-between items-center mb-1">
-                    <label class="block text-sm font-semibold text-gray-200">Password</label>
-                    <a href="#" class="text-xs text-manga-primary hover:text-purple-400 transition-colors">Forgot password?</a>
-                </div>
+                <label class="block text-sm font-semibold text-gray-200 mb-1">Password</label>
                 <input type="password" class="form-control w-full rounded-xl p-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-manga-primary focus:border-transparent transition-all outline-none" placeholder="••••••••" required>
             </div>
             
-            <div class="flex items-center gap-2 text-sm text-gray-300">
-                <input type="checkbox" id="remember" class="rounded text-manga-primary focus:ring-manga-primary border-gray-500 bg-white/10 w-4 h-4 cursor-pointer">
-                <label for="remember" class="cursor-pointer">Remember me for 30 days</label>
+            <div class="flex items-center justify-between text-sm text-gray-300">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="remember" class="rounded text-manga-primary focus:ring-manga-primary border-gray-500 bg-white/10 w-4 h-4 cursor-pointer">
+                    <label for="remember" class="cursor-pointer">Remember me for 30 days</label>
+                </div>
+                <a href="#" class="text-xs text-manga-primary hover:text-purple-400 transition-colors">Forgot password?</a>
             </div>
 
             <button type="submit" class="w-full bg-manga-primary hover:bg-purple-700 text-white py-3 rounded-xl font-bold shadow-manga transition-all transform hover:scale-[1.02] mt-4">Login to Dashboard</button>

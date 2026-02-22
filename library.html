@@ -13,9 +13,18 @@
 <body class="antialiased bg-gray-50 dark:bg-gray-950">
     <div id="header-container"></div>
     
-    <main class="container mx-auto px-4 pb-12">
+    <main class="pb-12">
+        <!-- Library Hero -->
+        <section class="hero-gradient relative overflow-hidden py-24 mb-8 text-center">
+            <div class="container mx-auto px-4 relative z-10 slide-down">
+                <h1 class="text-5xl font-extrabold tracking-tight">Manga <span class="text-manga-primary">Library</span></h1>
+                <p class="text-xl text-gray-500 max-w-2xl mx-auto mt-4">Explore our collection of high-quality translations from across the globe.</p>
+            </div>
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-purple-500 opacity-20 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-purple-800 opacity-20 blur-3xl"></div>
+        </section>
         
-        <div class="flex flex-col md:flex-row gap-8 mt-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row gap-8">
             <!-- Sidebar Filter -->
             <aside class="w-full md:w-64 flex-shrink-0 fade-up">
                 <div class="glass-panel p-5 rounded-2xl sticky top-24">
@@ -92,12 +101,7 @@
                     </div>
                 </div>
 
-                <!-- Main Content: Center Header -->
-                <div class="text-center mb-10 space-y-4">
-                    <h1 class="text-4xl font-extrabold tracking-tight">Manga <span class="text-manga-primary">Library</span></h1>
-                    <div class="w-20 h-1.5 bg-manga-primary mx-auto rounded-full"></div>
-                    <p class="text-gray-500 max-w-xl mx-auto">Explore our collection of high-quality translations from across the globe.</p>
-                </div>
+
                 <div class="flex justify-end items-center mb-6">
                     <select class="form-control rounded-lg p-2 text-sm max-w-[150px]">
                         <option>Latest</option>
@@ -155,6 +159,7 @@
                 </div>
 
             </div>
+        </div>
         </div>
     </main>
 

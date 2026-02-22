@@ -208,12 +208,21 @@ body {
   color: hsl(var(--primary));
 }
 
+.nav-item.active {
+  color: hsl(var(--primary));
+  font-weight: 700;
+}
+
 .dark .nav-item {
   color: hsl(var(--muted-foreground));
 }
 
 .dark .nav-item:hover {
   color: hsl(var(--foreground));
+}
+
+.dark .nav-item.active {
+  color: hsl(var(--primary));
 }
 
 /* Main Spacing */
@@ -224,11 +233,11 @@ main {
 
 /* Hero Section Gradient Background */
 .hero-gradient {
-  background: linear-gradient(135deg, hsla(var(--primary)/0.1) 0%, transparent 100%);
+  background: linear-gradient(135deg, hsla(var(--background)/0.3) 0%, hsl(var(--background)) 100%), url('../breedcrumb.png') center/cover no-repeat;
 }
 
 .dark .hero-gradient {
-  background: linear-gradient(135deg, hsla(var(--primary)/0.2) 0%, rgba(15, 23, 42, 1) 100%);
+  background: linear-gradient(135deg, hsla(var(--background)/0.3) 0%, hsl(var(--background)) 100%), url('../breedcrumb.png') center/cover no-repeat;
 }
 
 /* Custom Scrollbar */

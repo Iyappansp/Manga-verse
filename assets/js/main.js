@@ -4,14 +4,14 @@ const headerHTML = `
     <div class="w-full px-4 sm:px-6 lg:px-10">
         <div class="flex justify-between items-center h-16 relative">
             <!-- Left: Logo -->
-            <div class="flex items-center">
+            <div class="flex items-center flex-shrink-0">
                 <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-14 md:h-16 w-auto max-w-[250px] object-contain">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-14 md:h-16 w-auto max-w-[200px] lg:max-w-[250px] object-contain">
                 </a>
             </div>
 
-            <!-- Center: Nav (Absolute Center) -->
-            <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 space-x-6 nav-links">
+            <!-- Center: Nav -->
+            <div class="hidden lg:flex items-center justify-center space-x-3 xl:space-x-6 flex-1 px-2 nav-links overflow-hidden text-sm xl:text-base">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="home-2.html" class="nav-item whitespace-nowrap">Home-2</a>
                 <a href="about.html" class="nav-item">About</a>
@@ -24,7 +24,7 @@ const headerHTML = `
             </div>
 
             <!-- Right: Controls & Auth -->
-            <div class="flex items-center gap-4 relative z-10">
+            <div class="flex items-center gap-2 lg:gap-4 flex-shrink-0 relative z-10">
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Theme">
                     <!-- Sun/Moon icon injected via JS depending on state -->
                 </button>
@@ -38,7 +38,7 @@ const headerHTML = `
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 dark:text-gray-300">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 dark:text-gray-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
@@ -46,8 +46,8 @@ const headerHTML = `
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 absolute w-full slide-down">
-        <div class="px-4 pt-2 pb-4 space-y-1 shadow-lg">
+    <div id="mobile-menu" class="lg:hidden hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 absolute w-full slide-down text-sm">
+        <div class="px-4 pt-2 pb-4 space-y-1 shadow-lg max-h-[80vh] overflow-y-auto">
             <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
             <a href="home-2.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a>
             <a href="library.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Library</a>
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-item').forEach(link => {
         if (link.getAttribute('href') === currentPath) {
-            link.classList.add('text-manga-primary', 'font-semibold');
+            link.classList.add('active');
         }
     });
 
