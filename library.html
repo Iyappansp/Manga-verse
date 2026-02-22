@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
+    </script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-gray-50 dark:bg-gray-950">
+    <div id="header-container"></div>
+    
+    <main class="container mx-auto px-4 pb-12">
+        
+        <div class="flex flex-col md:flex-row gap-8 mt-4">
+            <!-- Sidebar Filter -->
+            <aside class="w-full md:w-64 flex-shrink-0 fade-up">
+                <div class="glass-panel p-5 rounded-2xl sticky top-24">
+                    <h3 class="font-bold text-lg mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">Filters</h3>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold mb-2">Status</label>
+                        <select class="form-control w-full rounded-lg p-2 text-sm">
+                            <option>All</option>
+                            <option>Ongoing</option>
+                            <option>Completed</option>
+                            <option>Hiatus</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold mb-2">Genres</label>
+                        <div class="space-y-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar text-sm">
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-manga-primary focus:ring-manga-primary border-gray-300"> Action</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-manga-primary focus:ring-manga-primary border-gray-300"> Fantasy</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-manga-primary focus:ring-manga-primary border-gray-300"> Romance</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-manga-primary focus:ring-manga-primary border-gray-300"> Sci-Fi</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-manga-primary focus:ring-manga-primary border-gray-300"> Mystery</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="rounded text-manga-primary focus:ring-manga-primary border-gray-300"> Supernatural</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary w-full py-2 rounded-lg text-sm shadow-manga">Apply Filters</button>
+
+                    <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
+                        <h4 class="font-bold text-sm mb-4 uppercase tracking-wider text-gray-500">Reader Preferences</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-xs text-gray-500 mb-2 block">Layout Mode</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="px-2 py-1 bg-manga-primary text-white rounded text-xs">Grid</button>
+                                    <button class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded text-xs">Detailed</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs text-gray-500 mb-2 block">Image Quality</label>
+                                <select class="form-control w-full text-xs rounded p-1">
+                                    <option>Original</option>
+                                    <option>Compressed</option>
+                                    <option>Data Saver</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Grid -->
+            <div class="flex-1 slide-down">
+                <!-- Recently Viewed -->
+                <div class="mb-10 pb-10 border-b border-gray-100 dark:border-gray-900">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-manga-primary animate-pulse"></span>
+                        Recently Viewed
+                    </h4>
+                    <div class="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+                        <div class="flex-shrink-0 w-20 group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=100" class="w-20 h-28 object-cover rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
+                            <p class="text-[10px] mt-2 font-bold line-clamp-1 group-hover:text-manga-primary">Shadow...</p>
+                        </div>
+                        <div class="flex-shrink-0 w-20 group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1541562232579-512a21360020?w=100" class="w-20 h-28 object-cover rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
+                            <p class="text-[10px] mt-2 font-bold line-clamp-1 group-hover:text-manga-primary">Neon...</p>
+                        </div>
+                        <div class="flex-shrink-0 w-20 group cursor-pointer opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=100" class="w-20 h-28 object-cover rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
+                            <p class="text-[10px] mt-2 font-bold line-clamp-1 group-hover:text-manga-primary">Samurai...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content: Center Header -->
+                <div class="text-center mb-10 space-y-4">
+                    <h1 class="text-4xl font-extrabold tracking-tight">Manga <span class="text-manga-primary">Library</span></h1>
+                    <div class="w-20 h-1.5 bg-manga-primary mx-auto rounded-full"></div>
+                    <p class="text-gray-500 max-w-xl mx-auto">Explore our collection of high-quality translations from across the globe.</p>
+                </div>
+                <div class="flex justify-end items-center mb-6">
+                    <select class="form-control rounded-lg p-2 text-sm max-w-[150px]">
+                        <option>Latest</option>
+                        <option>Popular</option>
+                        <option>A-Z</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 stagger-grid">
+                    <!-- 10 mock items -->
+                </div>
+                
+                <!-- Script to inject mock items for visual fullness -->
+                <script>
+                    const imgs = [
+                        "https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=300",
+                        "https://images.unsplash.com/photo-1541562232579-512a21360020?w=300",
+                        "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=300",
+                        "https://images.unsplash.com/photo-1578351536780-0a81d1bfbad6?w=300",
+                        "https://images.unsplash.com/photo-1563302111-e22c441bb16b?w=300"
+                    ];
+                    let gridHTML = '';
+                    for(let i=1; i<=15; i++) {
+                        gridHTML += `
+                        <a href="manga-details.html" class="manga-card hover-lift group relative cursor-pointer block text-current">
+                            <div class="relative overflow-hidden">
+                                <img src="${imgs[i%imgs.length]}" alt="Manga ${i}" class="cover-img">
+                                <div class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur">Ch. ${Math.floor(Math.random()*200 + 1)}</div>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+                                <h3 class="font-semibold text-sm line-clamp-2 mb-1 group-hover:text-manga-primary transition-colors">Amazing Manga Title ${i}</h3>
+                                <div class="flex justify-between items-center">
+                                    <p class="text-xs text-gray-500">Author Name</p>
+                                    <span class="text-xs text-yellow-500">★ 4.${i%5 + 5}</span>
+                                </div>
+                            </div>
+                        </a>
+                        `;
+                    }
+                    document.querySelector('.stagger-grid').innerHTML = gridHTML;
+                </script>
+
+                <!-- Pagination UI -->
+                <div class="mt-12 flex justify-center fade-up">
+                    <nav class="flex gap-2">
+                        <button class="btn btn-outline-primary px-3 max-h-[38px] rounded-md disabled">&laquo;</button>
+                        <button class="btn btn-primary px-4 max-h-[38px] rounded-md">1</button>
+                        <button class="btn btn-outline-primary px-4 max-h-[38px] rounded-md">2</button>
+                        <button class="btn btn-outline-primary px-4 max-h-[38px] rounded-md">3</button>
+                        <span class="px-2 py-2 text-gray-500">...</span>
+                        <button class="btn btn-outline-primary px-4 max-h-[38px] rounded-md">12</button>
+                        <button class="btn btn-outline-primary px-3 max-h-[38px] rounded-md">&raquo;</button>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

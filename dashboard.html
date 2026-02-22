@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
+    </script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-gray-50 dark:bg-gray-950 overflow-hidden">
+    <!-- Inline header specifically for dashboard, or top nav -->
+    <nav class="manga-nav fixed top-0 w-full z-50 h-16 flex items-center justify-between px-4 sm:px-6">
+        <div class="flex items-center gap-4">
+            <button id="sidebar-toggle" class="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-manga-primary/10 rounded-lg md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-12 md:h-16 w-auto max-w-[250px] object-contain group-hover:rotate-12 transition-transform shadow-lg shadow-manga-primary/20 rounded-lg">
+                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Workspace</span>
+            </a>
+        </div>
+        <div class="flex items-center gap-4">
+            <select id="test-role-selector" class="form-control text-xs rounded-lg bg-gray-100 dark:bg-gray-800 border-none px-3 py-1.5 outline-none font-medium">
+                <option value="reader">Reader</option>
+                <option value="translator">Translator</option>
+                <option value="editor">Editor</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">☀️</button>
+            <button id="rtl-toggle" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-manga-primary hover:text-white transition-all">RTL</button>
+            <div class="flex items-center gap-3 border-s border-gray-200 dark:border-gray-800 ps-4">
+                <img src="https://i.pravatar.cc/150?img=33" alt="Profile" class="w-8 h-8 rounded-full border border-manga-primary/50">
+                <span class="text-sm font-semibold hidden sm:block text-gray-700 dark:text-gray-200" id="current-role-display">User</span>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-all duration-300"></div>
+
+    <div class="flex h-screen pt-16 relative overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="dashboard-sidebar" class="manga-sidebar fixed inset-y-0 left-0 pt-16 md:static md:block z-50 transition-all duration-300 -translate-x-full md:translate-x-0 overflow-y-auto">
+            <nav class="p-4 space-y-6">
+                <!-- Workspace -->
+                <div>
+                    <p class="sidebar-section-title px-3 text-[10px] font-bold text-gray-400 uppercase tracking-[0.1em] mb-3">Workspace</p>
+                    <div class="space-y-1.5">
+                        <a href="dashboard.html" class="sidebar-item flex items-center gap-3 px-3 py-2 bg-manga-primary/10 text-manga-primary rounded-lg font-medium">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                            <span class="sidebar-text">Dashboard</span>
+                        </a>
+                        <a href="dashboard-activity.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <span class="sidebar-text">Activity Feed</span>
+                        </a>
+                        <button id="toggle-notifications-sidebar" class="sidebar-item w-full flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors text-start">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                            <span class="sidebar-text">Notifications</span>
+                            <span class="ms-auto bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full sidebar-text">3</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Library -->
+                <div>
+                    <p class="sidebar-section-title px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">📚 Library</p>
+                    <div class="space-y-1">
+                        <a href="dashboard-history.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="sidebar-text">Reading History</span>
+                        </a>
+                        <a href="dashboard-bookmarks.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                            <span class="sidebar-text">Bookmarks</span>
+                        </a>
+                        <a href="dashboard-history.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="sidebar-text">Continue Reading</span>
+                        </a>
+                        <a href="library.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            <span class="sidebar-text">Recently Updated</span>
+                        </a>
+                        <a href="library.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path></svg>
+                            <span class="sidebar-text font-bold text-manga-primary">Downloaded</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div>
+                    <p class="sidebar-section-title px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">✍ Projects</p>
+                    <div class="space-y-1">
+                        <a href="dashboard-projects.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                            <span class="sidebar-text">My Projects</span>
+                        </a>
+                        <a href="dashboard-assigned.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                            <span class="sidebar-text">Assigned Chapters</span>
+                        </a>
+                        <a href="dashboard-projects.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="sidebar-text">Ongoing Projects</span>
+                        </a>
+                        <a href="dashboard-upload.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors text-manga-primary font-bold italic">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                            <span class="sidebar-text">Upload Chapter</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Logout Only -->
+                <div class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800">
+                    <div class="space-y-1">
+                        <a href="index.html" class="sidebar-item flex items-center gap-3 px-3 py-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-lg font-medium transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                            <span class="sidebar-text">Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 bg-gray-50 dark:bg-gray-950">
+            <div class="max-w-7xl mx-auto space-y-8">
+                <!-- Header Section -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 fade-up">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Workspace Overview</h1>
+                        <p class="text-gray-500 dark:text-gray-400">Welcome back! Here's what's happening today.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button class="btn btn-outline-primary px-4 py-2 text-sm font-semibold">
+                            Generate Report
+                        </button>
+                        <button class="btn btn-primary px-4 py-2 text-sm font-semibold shadow-manga glow-pulse">
+                            New Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistics Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-grid">
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover-lift flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">📚</span>
+                            <span class="text-xs font-bold text-green-500 bg-green-500/10 px-2 py-1 rounded-full">+12%</span>
+                        </div>
+                        <h3 class="text-3xl font-bold counter-value" data-target="1248">0</h3>
+                        <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">Total Chapters</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover-lift flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">⚙️</span>
+                            <span class="text-xs font-bold text-blue-500 bg-blue-500/10 px-2 py-1 rounded-full">Active</span>
+                        </div>
+                        <h3 class="text-3xl font-bold counter-value" data-target="24">0</h3>
+                        <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">Ongoing Projects</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover-lift flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">✅</span>
+                            <span class="text-xs font-bold text-purple-500 bg-purple-500/10 px-2 py-1 rounded-full">Milestone</span>
+                        </div>
+                        <h3 class="text-3xl font-bold counter-value" data-target="86">0</h3>
+                        <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">Completed Projects</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover-lift flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">👥</span>
+                            <span class="text-xs font-bold text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded-full">Global</span>
+                        </div>
+                        <h3 class="text-3xl font-bold counter-value" data-target="412">0</h3>
+                        <p class="text-sm font-medium text-gray-500 uppercase tracking-wider">Team Members</p>
+                    </div>
+                </div>
+
+                <!-- Graphs & Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Weekly Activity Chart -->
+                    <div class="lg:col-span-2 glass-panel p-6 rounded-2xl border border-gray-200 dark:border-gray-800 fade-up">
+                        <div class="flex items-center justify-between mb-8">
+                            <h2 class="text-xl font-bold">Weekly Activity</h2>
+                            <select class="bg-transparent border border-gray-200 dark:border-gray-800 rounded-lg text-sm px-2 py-1 outline-none">
+                                <option>Last 7 Days</option>
+                                <option>Last 30 Days</option>
+                            </select>
+                        </div>
+                        <div class="bar-chart items-end pb-4">
+                            <div class="bar-item" style="height: 0%" data-height="60%" data-value="45"></div>
+                            <div class="bar-item" style="height: 0%" data-height="85%" data-value="72"></div>
+                            <div class="bar-item" style="height: 0%" data-height="40%" data-value="30"></div>
+                            <div class="bar-item" style="height: 0%" data-height="95%" data-value="88"></div>
+                            <div class="bar-item" style="height: 0%" data-height="70%" data-value="56"></div>
+                            <div class="bar-item" style="height: 0%" data-height="55%" data-value="40"></div>
+                            <div class="bar-item" style="height: 0%" data-height="80%" data-value="65"></div>
+                        </div>
+                        <div class="flex justify-between mt-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Feed -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-200 dark:border-gray-800 fade-up">
+                        <h2 class="text-xl font-bold mb-6">Recent Activity</h2>
+                        <div class="space-y-6">
+                            <div class="timeline-item">
+                                <span class="timeline-dot"></span>
+                                <p class="text-sm font-semibold">You uploaded Chapter 45</p>
+                                <p class="text-xs text-gray-500">Solo Leveling • 2 hours ago</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-dot bg-blue-500"></span>
+                                <p class="text-sm font-semibold">Editor approved Chapter 22</p>
+                                <p class="text-xs text-gray-500">Omniscient Reader • 5 hours ago</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-dot bg-yellow-500"></span>
+                                <p class="text-sm font-semibold">New comment on Project X</p>
+                                <p class="text-xs text-gray-500">By Sarah • Yesterday</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-dot bg-green-500"></span>
+                                <p class="text-sm font-semibold">Project milestone reached</p>
+                                <p class="text-xs text-gray-500">100 Chapters Completed • 2 days ago</p>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 py-2 text-sm font-bold text-manga-primary border border-manga-primary/20 rounded-xl hover:bg-manga-primary/5 transition-colors">
+                            View All Activity
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Projects -->
+                <div class="glass-panel rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden fade-up">
+                    <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+                        <h2 class="text-xl font-bold">Active Projects</h2>
+                        <div class="flex gap-2">
+                             <input type="text" placeholder="Search projects..." class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 border-none rounded-lg text-sm outline-none w-48 focus:ring-1 ring-manga-primary">
+                             <button class="btn btn-primary btn-sm px-4 rounded-lg">+ Add</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive-custom">
+                        <table class="w-full text-start">
+                            <thead class="bg-gray-50 dark:bg-gray-900/50 text-gray-500 text-[10px] uppercase font-bold tracking-widest">
+                                <tr>
+                                    <th class="p-4 text-start">Project Title</th>
+                                    <th class="p-4 text-start">My Role</th>
+                                    <th class="p-4 text-start">Progress</th>
+                                    <th class="p-4 text-start">Status</th>
+                                    <th class="p-4 text-end">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboard-projects-table" class="divide-y divide-gray-200 dark:divide-gray-800">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Notification Panel (Sidebar Right) -->
+        <aside id="notification-panel" class="fixed inset-y-0 right-0 pt-16 w-80 bg-white dark:bg-gray-950 border-s border-gray-200 dark:border-gray-800 z-50 shadow-2xl overflow-y-auto translate-x-full">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-xl font-bold">Notifications</h2>
+                    <button id="close-notifications" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-4 rounded-xl bg-manga-primary/5 border border-manga-primary/10">
+                        <p class="text-xs font-bold text-manga-primary uppercase mb-1">New Update</p>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Chapter 45 of Solo Leveling is live!</p>
+                        <p class="text-xs text-gray-500 mt-2">2 hours ago</p>
+                    </div>
+                    <div class="p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors border border-transparent hover:border-gray-200 dark:hover:border-gray-800">
+                        <p class="text-xs font-bold text-blue-500 uppercase mb-1">System</p>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Maintenance scheduled for 12:00 AM UTC.</p>
+                        <p class="text-xs text-gray-500 mt-2">5 hours ago</p>
+                    </div>
+                    <div class="p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors border border-transparent hover:border-gray-200 dark:hover:border-gray-800">
+                        <p class="text-xs font-bold text-yellow-500 uppercase mb-1">Comment</p>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Sarah commented on "Omniscient Reader".</p>
+                        <p class="text-xs text-gray-500 mt-2">Yesterday</p>
+                    </div>
+                </div>
+                <button class="w-full mt-8 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl text-sm font-bold transition-colors">
+                    Mark all as read
+                </button>
+            </div>
+        <!-- Mobile Sidebar Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity duration-300 opacity-0"></div>
+    </div>
+
+    <script src="assets/js/role-simulation.js"></script>
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

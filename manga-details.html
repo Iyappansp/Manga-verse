@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Manga Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
+    </script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-gray-50 dark:bg-gray-950">
+    <div id="header-container"></div>
+    
+    <main>
+        <!-- Banner/Hero -->
+        <div class="w-full h-64 md:h-96 relative overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30 dark:opacity-20 blur-sm" style="background-image: url('https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=1920');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-50 dark:from-gray-950 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-4 -mt-32 md:-mt-48 relative z-10 pb-16">
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Cover -->
+                <div class="w-48 md:w-64 flex-shrink-0 mx-auto md:mx-0 slide-down">
+                    <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=400" alt="Cover" class="w-full rounded-2xl shadow-xl border-4 border-white dark:border-gray-900 object-cover aspect-[2/3]">
+                    <div class="mt-4 flex flex-col gap-2">
+                        <button class="btn btn-primary w-full py-3 rounded-xl shadow-manga text-lg font-bold">Read First Chapter</button>
+                        <button class="btn btn-outline-primary w-full py-2 rounded-xl text-sm flex gap-2 justify-center items-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                            Add to Library
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="flex-1 mt-4 md:mt-24 fade-up">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Ongoing</span>
+                        <a href="#" class="badge badge-outline hover:bg-manga-primary hover:text-white transition-colors">Action</a>
+                        <a href="#" class="badge badge-outline hover:bg-manga-primary hover:text-white transition-colors">Fantasy</a>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-2">Shadow Sovereign</h1>
+                    <p class="text-xl text-gray-500 mb-6">By <span class="text-manga-primary">Author Name</span> | Translated by <span class="font-semibold text-gray-700 dark:text-gray-300">Team Alpha</span></p>
+
+                    <div class="glass-panel p-6 rounded-2xl mb-8">
+                        <h3 class="font-bold text-lg mb-2">Synopsis</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                            In a world where gates connect reality to dungeons filled with monsters, ordinary people awakened with powers are known as "Hunters." Sung Jin-Woo is known as the weakest hunter of all mankind. One day, after surviving a horrific double dungeon, he awakens with a mysterious system that allows him to level up indefinitely.
+                        </p>
+                    </div>
+
+                    <!-- Chapters -->
+                    <div class="mb-12">
+                        <div class="flex justify-between items-center mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
+                            <h3 class="font-bold text-2xl">Chapters (142)</h3>
+                            <button class="text-sm border-gray-300 px-3 py-1 border rounded hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition-colors">Ascending</button>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <!-- Chapter Rows -->
+                            <a href="#" class="flex justify-between items-center p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 hover-lift text-current">
+                                <div>
+                                    <h4 class="font-semibold">Chapter 142</h4>
+                                    <p class="text-xs text-gray-500">The Monarch's Return</p>
+                                </div>
+                                <span class="text-xs text-gray-400">Today</span>
+                            </a>
+                            <a href="#" class="flex justify-between items-center p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 hover-lift text-current">
+                                <div>
+                                    <h4 class="font-semibold text-gray-500">Chapter 141</h4>
+                                    <p class="text-xs text-gray-400">Despair</p>
+                                </div>
+                                <span class="text-xs text-gray-400">2 days ago</span>
+                            </a>
+                            <a href="#" class="flex justify-between items-center p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 hover-lift text-current">
+                                <div>
+                                    <h4 class="font-semibold text-gray-500">Chapter 140</h4>
+                                    <p class="text-xs text-gray-400">The Final Gate</p>
+                                </div>
+                                <span class="text-xs text-gray-400">5 days ago</span>
+                            </a>
+                            <button class="w-full py-3 text-sm text-manga-primary font-semibold hover:bg-manga-primary/10 rounded-xl transition-colors">Show More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* RTL Overrides for MangaVerse */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0 !important; }
+[dir="rtl"] .mr-auto { margin-left: auto; margin-right: 0 !important; }
+
+[dir="rtl"] .pl-10 { padding-right: 2.5rem; padding-left: 1rem; }
+[dir="rtl"] .pr-4 { padding-left: 1rem; padding-right: 1rem; }
+[dir="rtl"] .left-3 { right: 0.75rem; left: auto; }
+[dir="rtl"] .right-3 { left: 0.75rem; right: auto; }
+
+/* Flip Chevrons */
+[dir="rtl"] .chevron-icon {
+  transform: scaleX(-1);
+}
+
+/* Sidebar Flip */
+[dir="rtl"] #dashboard-sidebar {
+  right: 0;
+  left: auto;
+  border-right: none;
+  border-left: 1px solid hsl(var(--border));
+  transform: translateX(100%);
+}
+
+[dir="rtl"] #dashboard-sidebar:not(.-translate-x-full) {
+  transform: translateX(0);
+}
+
+/* Notification Panel Flip */
+[dir="rtl"] #notification-panel {
+  left: 0;
+  right: auto;
+  border-left: none;
+  border-right: 1px solid hsl(var(--border));
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] #notification-panel:not(.translate-x-full) {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .translate-x-full {
+  transform: translateX(-100%) !important;
+}
+
+[dir="rtl"] .-translate-x-full {
+  transform: translateX(100%) !important;
+}
+
+[dir="rtl"] .me-4 { margin-left: 1rem; margin-right: 0; }
+[dir="rtl"] .ms-auto { margin-right: auto; margin-left: 0; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem; margin-right: 0; }

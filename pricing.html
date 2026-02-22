@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Pricing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
+    </script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/dark-mode.css" rel="stylesheet">
+    <link href="assets/css/rtl.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+    <div id="header-container"></div>
+    
+    <main class="pb-16">
+        <!-- Pricing Hero -->
+        <section class="py-24 bg-manga-primary/10 text-center relative overflow-hidden dark:bg-manga-primary/20">
+            <div class="container mx-auto px-4 relative z-10 slide-down">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">Choose Your Plan</h1>
+                <p class="text-xl max-w-3xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed font-light">Unlock premium features, remove ads, and support your favorite translators directly.</p>
+            </div>
+            <!-- Background Elements -->
+            <div class="absolute top-1/2 left-10 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+            <div class="absolute bottom-0 right-10 w-40 h-40 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        </section>
+
+        <!-- Pricing Cards -->
+        <section class="py-20 container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger-grid">
+                <!-- Free Plan -->
+                <div class="glass-panel p-8 rounded-3xl hover-lift border border-gray-200 dark:border-gray-800 text-center shadow-lg bg-white/50 dark:bg-gray-900/50">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Reader Basic</h3>
+                    <div class="text-4xl font-bold mb-6 text-gray-900 dark:text-white">$0<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                    <ul class="text-left space-y-4 mb-8 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">✓</span> Access to standard library</li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">✓</span> Bookmarks and history</li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 px-2 text-sm text-center">✕</span> Ad-supported</li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 px-2 text-sm text-center">✕</span> 1 week delay on new chapters</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-full font-bold border-2 border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 bg-gray-50/50 dark:bg-gray-800/30 cursor-default">Current Plan</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="glass-panel p-8 rounded-3xl hover-lift border-2 border-manga-primary relative text-center shadow-xl shadow-manga-primary/20 bg-white/80 dark:bg-gray-900/80">
+                    <div class="absolute -top-4 right-8">
+                        <span class="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide shadow-lg">Most Popular</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-manga-primary">Premium Supporter</h3>
+                    <div class="text-4xl font-bold mb-6 text-gray-900 dark:text-white">$4.99<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                    <ul class="text-left space-y-4 mb-8 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">✓</span> Instant access to new chapters</li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">✓</span> Zero advertisements</li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">✓</span> High-res image quality downloads</li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">✓</span> Exclusive Discord roles</li>
+                    </ul>
+                    <button class="btn btn-primary w-full py-3 rounded-full font-bold shadow-manga hover-lift">Subscribe Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
+    </script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-gray-50 flex items-center justify-center min-h-screen relative overflow-hidden transition-colors" id="login-body">
+    
+    <!-- Background video/gradient setup for awesome login visual -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/90 to-black z-10"></div>
+        <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=1920" class="w-full h-full object-cover" alt="Background">
+    </div>
+
+    <!-- Login Card -->
+    <div class="glass-panel w-full max-w-md p-8 rounded-3xl shadow-2xl z-20 mx-4 border border-white/20 slide-down bg-white/10 dark:bg-black/40 backdrop-blur-xl">
+        <div class="text-center mb-8">
+            <a href="index.html" class="inline-flex items-center gap-2 text-2xl font-bold tracking-tight text-white mb-2">
+                <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-20 md:h-24 w-auto max-w-[300px] object-contain">
+            </a>
+            <p class="text-gray-300 text-sm">Welcome back to the sanctuary.</p>
+        </div>
+
+        <form action="dashboard.html" class="space-y-5">
+            <div>
+                <label class="block text-sm font-semibold mb-1 text-gray-200">Email address</label>
+                <input type="email" class="form-control w-full rounded-xl p-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-manga-primary focus:border-transparent transition-all outline-none" placeholder="name@example.com" required>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <label class="block text-sm font-semibold text-gray-200">Password</label>
+                    <a href="#" class="text-xs text-manga-primary hover:text-purple-400 transition-colors">Forgot password?</a>
+                </div>
+                <input type="password" class="form-control w-full rounded-xl p-3 bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-manga-primary focus:border-transparent transition-all outline-none" placeholder="••••••••" required>
+            </div>
+            
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+                <input type="checkbox" id="remember" class="rounded text-manga-primary focus:ring-manga-primary border-gray-500 bg-white/10 w-4 h-4 cursor-pointer">
+                <label for="remember" class="cursor-pointer">Remember me for 30 days</label>
+            </div>
+
+            <button type="submit" class="w-full bg-manga-primary hover:bg-purple-700 text-white py-3 rounded-xl font-bold shadow-manga transition-all transform hover:scale-[1.02] mt-4">Login to Dashboard</button>
+        </form>
+
+        <p class="text-center text-sm text-gray-400 mt-8">
+            Don't have an account? <a href="register.html" class="text-manga-primary font-bold hover:text-purple-400 transition-colors">Sign up</a>
+        </p>
+    </div>
+
+</body>
+</html>

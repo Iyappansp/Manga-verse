@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | Genres</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
+    </script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-gray-50 dark:bg-gray-950">
+    <div id="header-container"></div>
+    
+    <main class="container mx-auto px-4 pb-16 min-h-screen">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center slide-down">Explore Genres</h1>
+        <p class="text-lg text-gray-500 text-center max-w-2xl mx-auto mb-16 fade-up stagger-1">Find your next favorite series from our curated translation collections.</p>
+
+        <!-- Genre of the Day -->
+        <section class="mb-20 fade-up">
+            <div class="glass-panel rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl shadow-purple-500/10 border border-gray-200 dark:border-gray-800">
+                <div class="lg:w-1/2 relative min-h-[300px]">
+                    <img src="https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=800" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 text-white">
+                        <span class="bg-manga-primary px-3 py-1 rounded text-xs font-bold mb-4 inline-block">GENRE OF THE DAY</span>
+                        <h2 class="text-3xl font-black italic uppercase">Cyberpunk</h2>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 p-10 flex flex-col justify-center bg-white dark:bg-gray-900">
+                    <h3 class="text-2xl font-bold mb-4">High Tech, Low Life</h3>
+                    <p class="text-gray-500 mb-8 leading-relaxed text-sm">Dive into dystopian futures where corporate greed meets robotic evolution. Explore 142 series set in neon-drenched megacities.</p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="library.html" class="btn btn-primary px-6 py-2 rounded-full font-bold shadow-manga text-sm">Browse Collection</a>
+                        <div class="flex -space-x-3 items-center">
+                            <img src="https://i.pravatar.cc/100?img=21" class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800">
+                            <img src="https://i.pravatar.cc/100?img=22" class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800">
+                            <img src="https://i.pravatar.cc/100?img=23" class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800">
+                            <span class="pl-5 text-[10px] text-gray-400 font-medium">+12k daily readers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 stagger-grid">
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">⚔️</div>
+                <h3 class="text-2xl font-bold group-hover:text-red-500 transition-colors">Action</h3>
+                <p class="text-sm mt-2 text-gray-500">1,204 Titles</p>
+            </a>
+            
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">✨</div>
+                <h3 class="text-2xl font-bold group-hover:text-purple-500 transition-colors">Fantasy</h3>
+                <p class="text-sm mt-2 text-gray-500">890 Titles</p>
+            </a>
+            
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">❤️</div>
+                <h3 class="text-2xl font-bold group-hover:text-pink-500 transition-colors">Romance</h3>
+                <p class="text-sm mt-2 text-gray-500">2,056 Titles</p>
+            </a>
+
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🚀</div>
+                <h3 class="text-2xl font-bold group-hover:text-blue-500 transition-colors">Sci-Fi</h3>
+                <p class="text-sm mt-2 text-gray-500">432 Titles</p>
+            </a>
+
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🕵️‍♂️</div>
+                <h3 class="text-2xl font-bold group-hover:text-gray-500 transition-colors">Mystery</h3>
+                <p class="text-sm mt-2 text-gray-500">300 Titles</p>
+            </a>
+
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">👻</div>
+                <h3 class="text-2xl font-bold group-hover:text-indigo-500 transition-colors">Supernatural</h3>
+                <p class="text-sm mt-2 text-gray-500">670 Titles</p>
+            </a>
+
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">😆</div>
+                <h3 class="text-2xl font-bold group-hover:text-yellow-500 transition-colors">Comedy</h3>
+                <p class="text-sm mt-2 text-gray-500">1,500 Titles</p>
+            </a>
+
+            <a href="library.html" class="glass-panel p-8 rounded-2xl text-center group hover-lift relative overflow-hidden transition-all text-current block border border-gray-200 dark:border-gray-800 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🍵</div>
+                <h3 class="text-2xl font-bold group-hover:text-green-500 transition-colors">Slice of Life</h3>
+                <p class="text-sm mt-2 text-gray-500">540 Titles</p>
+            </a>
+        </div>
+
+        <!-- Explore by Theme -->
+        <section class="mt-24 pt-16 border-t border-gray-200 dark:border-gray-800">
+            <h2 class="text-3xl font-bold mb-10 text-center">Popular Themes</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-6 py-2 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-manga-primary hover:text-manga-primary transition-all font-bold text-sm">#Murim</a>
+                <a href="#" class="px-6 py-2 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-manga-primary hover:text-manga-primary transition-all font-bold text-sm">#Villainess</a>
+                <a href="#" class="px-6 py-2 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-manga-primary hover:text-manga-primary transition-all font-bold text-sm">#Reincarnation</a>
+                <a href="#" class="px-6 py-2 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-manga-primary hover:text-manga-primary transition-all font-bold text-sm">#Leveling</a>
+                <a href="#" class="px-6 py-2 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-manga-primary hover:text-manga-primary transition-all font-bold text-sm">#School Life</a>
+                <a href="#" class="px-6 py-2 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-manga-primary hover:text-manga-primary transition-all font-bold text-sm">#Post-Apocalypse</a>
+                <a href="#" class="px-6 py-2 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-manga-primary hover:text-manga-primary transition-all font-bold text-sm text-gray-400">+ See All</a>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="mt-24 mb-10 text-center fade-up">
+            <div class="max-w-3xl mx-auto p-12 rounded-[40px] bg-gradient-to-br from-manga-primary to-purple-800 text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-bold mb-4">Missing a collection?</h3>
+                    <p class="text-purple-100 mb-8 text-sm">Suggest new collections or help us curate existing ones by joining our librarian team.</p>
+                    <a href="contact.html" class="bg-white text-manga-primary px-10 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-xl text-sm">Contact Librarians</a>
+                </div>
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-black opacity-10 rounded-full blur-2xl"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

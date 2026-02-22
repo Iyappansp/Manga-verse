@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse | About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
+    </script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-gray-50 dark:bg-gray-950">
+    <div id="header-container"></div>
+    
+    <main class="pt-24 pb-16">
+        <!-- About Hero -->
+        <section class="py-24 bg-manga-primary text-white text-center relative overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10 slide-down">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Redefining Translation</h1>
+                <p class="text-xl max-w-3xl mx-auto opacity-90 leading-relaxed font-light">MangaVerse was built by translators, for translators. We bridge the gap between incredible stories and global audiences with a platform that respects the art of translation.</p>
+            </div>
+            <!-- Background abstraction -->
+            <div class="absolute inset-0 opacity-10 blur-sm pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.83-54.627 54.627-.83-.83L54.627 0zM0 54.627l54.627-54.627.83.83L.83 55.457 0 54.627z\' fill=\'%23ffffff\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="py-20 container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 fade-up">Our Core Philosophy</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-grid">
+                <div class="glass-panel p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 rounded-full bg-purple-100 text-manga-primary flex items-center justify-center mx-auto mb-6 text-3xl">💎</div>
+                    <h3 class="text-2xl font-bold mb-4">Premium Quality</h3>
+                    <p class="text-gray-500">We prioritize human translation over machine aggregation. High standards ensure the soul of the manga is preserved.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-6 text-3xl">🤝</div>
+                    <h3 class="text-2xl font-bold mb-4">Creator Respect</h3>
+                    <p class="text-gray-500">We work alongside rightsholders and always encourage reading official releases when available in your region.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl hover-lift">
+                    <div class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-6 text-3xl">🚀</div>
+                    <h3 class="text-2xl font-bold mb-4">Cutting-Edge Tech</h3>
+                    <p class="text-gray-500">Our custom dashboard gives translators the tools they need to work quickly, efficiently, and collaboratively.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+            <div class="container mx-auto px-4 max-w-4xl fade-up">
+                <h2 class="text-3xl font-bold mb-12 text-center">Our Journey</h2>
+                <div class="relative border-l border-manga-primary ml-4 md:ml-0 md:border-l-0 md:flex md:flex-col items-center">
+                    <div class="absolute left-0 top-0 h-full w-0.5 bg-manga-primary md:left-1/2 hidden md:block"></div>
+                    
+                    <div class="mb-10 ml-8 md:ml-0 md:flex md:w-full md:justify-between items-center z-10 relative group">
+                        <div class="absolute -left-[45px] top-1 w-6 h-6 rounded-full bg-manga-primary border-4 border-white dark:border-gray-900 md:left-1/2 md:-ml-[12px] group-hover:scale-125 transition-transform"></div>
+                        <div class="md:w-[45%] md:text-right pr-4 mb-2 md:mb-0">
+                            <h4 class="text-xl font-bold text-manga-primary">2021</h4>
+                        </div>
+                        <div class="md:w-[45%] pl-4">
+                            <h5 class="font-bold mb-2">The Concept</h5>
+                            <p class="text-gray-500 text-sm">Founded by a group of dissatisfied translators wanting a better SaaS workflow for scanlation.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-10 ml-8 md:ml-0 md:flex md:w-full md:justify-between items-center md:flex-row-reverse z-10 relative group">
+                        <div class="absolute -left-[45px] top-1 w-6 h-6 rounded-full bg-manga-primary border-4 border-white dark:border-gray-900 md:left-[50%] md:-ml-[12px] group-hover:scale-125 transition-transform"></div>
+                        <div class="md:w-[45%] md:text-left pl-4 mb-2 md:mb-0">
+                            <h4 class="text-xl font-bold text-manga-primary">2023</h4>
+                        </div>
+                        <div class="md:w-[45%] pr-4 md:text-right">
+                            <h5 class="font-bold mb-2">Alpha Launch</h5>
+                            <p class="text-gray-500 text-sm">Released the first closed alpha dashboard for 10 high-profile teams.</p>
+                        </div>
+                    </div>
+
+                    <div class="ml-8 md:ml-0 md:flex md:w-full md:justify-between items-center z-10 relative group">
+                        <div class="absolute -left-[45px] top-1 w-6 h-6 rounded-full bg-manga-primary border-4 border-white dark:border-gray-900 md:left-1/2 md:-ml-[12px] group-hover:scale-125 transition-transform animate-pulse"></div>
+                        <div class="md:w-[45%] md:text-right pr-4 mb-2 md:mb-0">
+                            <h4 class="text-xl font-bold text-manga-primary">Today</h4>
+                        </div>
+                        <div class="md:w-[45%] pl-4">
+                            <h5 class="font-bold mb-2">MangaVerse Global</h5>
+                            <p class="text-gray-500 text-sm">Open to the public with over 1500+ active manga and novels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="py-20 container mx-auto px-4 fade-up">
+            <h2 class="text-3xl font-bold mb-12 text-center">Meet the Visionaries</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Leader 1 -->
+                <div class="text-center group min-w-[200px]">
+                    <div class="relative w-32 h-32 mx-auto mb-4">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Leader" class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all border-4 border-white dark:border-gray-800 shadow-xl group-hover:scale-110">
+                        <div class="absolute inset-0 rounded-full border-2 border-manga-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-lg">Kenji Sato</h4>
+                    <p class="text-sm text-manga-primary font-semibold">Founder & CEO</p>
+                    <p class="text-xs text-gray-400 mt-2 px-4">Former scanlator with 15 years in the industry.</p>
+                </div>
+                <!-- Leader 2 -->
+                <div class="text-center group min-w-[200px]">
+                    <div class="relative w-32 h-32 mx-auto mb-4">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Leader" class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all border-4 border-white dark:border-gray-800 shadow-xl group-hover:scale-110">
+                        <div class="absolute inset-0 rounded-full border-2 border-manga-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-lg">Elena Vance</h4>
+                    <p class="text-sm text-manga-primary font-semibold">Chief Editor</p>
+                    <p class="text-xs text-gray-400 mt-2 px-4">Linguistics professor turned digital content strategist.</p>
+                </div>
+                <!-- Leader 3 -->
+                <div class="text-center group min-w-[200px]">
+                    <div class="relative w-32 h-32 mx-auto mb-4">
+                        <img src="https://i.pravatar.cc/150?img=13" alt="Leader" class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all border-4 border-white dark:border-gray-800 shadow-xl group-hover:scale-110">
+                        <div class="absolute inset-0 rounded-full border-2 border-manga-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-lg">Marcus Chen</h4>
+                    <p class="text-sm text-manga-primary font-semibold">CTO</p>
+                    <p class="text-xs text-gray-400 mt-2 px-4">Architect of our proprietary translation engine.</p>
+                </div>
+                <!-- Leader 4 -->
+                <div class="text-center group min-w-[200px]">
+                    <div class="relative w-32 h-32 mx-auto mb-4">
+                        <img src="https://i.pravatar.cc/150?img=14" alt="Leader" class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all border-4 border-white dark:border-gray-800 shadow-xl group-hover:scale-110">
+                        <div class="absolute inset-0 rounded-full border-2 border-manga-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h4 class="font-bold text-lg">Sarah Jenkins</h4>
+                    <p class="text-sm text-manga-primary font-semibold">Head of Ops</p>
+                    <p class="text-xs text-gray-400 mt-2 px-4">Expert in community growth and partner relations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Us Section -->
+        <section class="py-24 relative overflow-hidden bg-gray-900 text-white">
+            <div class="container mx-auto px-4 z-10 relative">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Why Build With MangaVerse?</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">We offer more than just a platform; we provide a career path for passionate creators.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-2xl bg-manga-primary flex items-center justify-center text-2xl flex-shrink-0">💰</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Revenue Share</h4>
+                            <p class="text-gray-400 text-sm">Get a fair share of ad revenue and direct supporter donations for your projects.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-2xl bg-manga-primary flex items-center justify-center text-2xl flex-shrink-0">⚡</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Early Access</h4>
+                            <p class="text-gray-400 text-sm">Beta test our AI-assisted cleaning and redrawing tools before anyone else.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-2xl bg-manga-primary flex items-center justify-center text-2xl flex-shrink-0">🔒</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Legal Security</h4>
+                            <p class="text-gray-400 text-sm">We handle all DMCA notices and licensing negotiations to keep you safe.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-2xl bg-manga-primary flex items-center justify-center text-2xl flex-shrink-0">🚀</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Global Reach</h4>
+                            <p class="text-gray-400 text-sm">Your translations are pushed to our 2M+ monthly active readers instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

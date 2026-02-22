@@ -1,0 +1,43 @@
+/* Additional Dark Mode Overrides (Core logic in style.css) */
+
+.dark .shadow-manga {
+  box-shadow: 0 4px 14px 0 hsla(var(--primary) / 0.15);
+}
+
+.dark .form-control {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.dark .form-control::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Ensure modal backgrounds adapt */
+.dark .modal-content {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark .dropdown-menu {
+  background-color: hsl(var(--popover));
+  border-color: hsl(var(--border));
+}
+
+.dark .dropdown-item {
+  color: hsl(var(--foreground));
+}
+
+.dark .dropdown-item:hover, .dark .dropdown-item:focus {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.dark .table {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.dark .table th, .dark .table td {
+  border-color: hsl(var(--border));
+}
