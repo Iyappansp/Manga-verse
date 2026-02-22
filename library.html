@@ -120,7 +120,8 @@
                         "https://images.unsplash.com/photo-1563302111-e22c441bb16b?w=300"
                     ];
                     let gridHTML = '';
-                    for(let i=1; i<=15; i++) {
+                    const allowedIds = [1, 2, 5, 6, 7, 10, 11, 12, 15];
+                    for(let i of allowedIds) {
                         gridHTML += `
                         <a href="manga-details.html" class="manga-card hover-lift group relative cursor-pointer block text-current">
                             <div class="relative overflow-hidden">
