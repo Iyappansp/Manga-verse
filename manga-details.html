@@ -8,23 +8,46 @@
     <script>
         tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'manga-primary': '#9333ea' } } } }
     </script>
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="antialiased bg-gray-50 dark:bg-gray-950">
     <div id="header-container"></div>
     
-    <main>
+    <main class="no-pt">
         <!-- Banner/Hero -->
-        <div class="w-full h-64 md:h-96 relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center opacity-30 dark:opacity-20 blur-sm" style="background-image: url('https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=1920');"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-50 dark:from-gray-950 to-transparent"></div>
+        <div class="w-full h-80 md:h-[450px] relative overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-40 dark:opacity-30 blur-[2px]" style="background-image: url('https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=1920');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-50 dark:from-gray-950 via-gray-900/60 to-gray-900/80"></div>
+            
+            <!-- Integrated Breadcrumbs and Top Heading -->
+            <div class="container mx-auto px-6 pt-24 relative z-20">
+                <nav class="breadcrumb-nav flex text-xs font-medium text-white/70 mb-4" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-2">
+                        <li>
+                            <a href="index.html" class="hover:text-white transition-colors flex items-center">
+                                <svg class="w-3.5 h-3.5 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                                Home
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-white/40 rtl:rotate-180" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                            <span class="ml-2 text-purple-400 font-bold tracking-wide">Manga Details</span>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="hidden md:block">
+                    <span class="badge bg-manga-primary/20 text-purple-300 border border-manga-primary/30 mb-2">Premium Series</span>
+                    <h2 class="text-white/50 text-sm uppercase tracking-[0.3em] font-bold">Series Details</h2>
+                </div>
+            </div>
         </div>
 
-        <div class="container mx-auto px-4 -mt-32 md:-mt-48 relative z-10 pb-16">
+        <div class="container mx-auto px-4 -mt-40 md:-mt-56 relative z-10 pb-16">
             <div class="flex flex-col md:flex-row gap-8">
                 <!-- Cover -->
                 <div class="w-48 md:w-64 flex-shrink-0 mx-auto md:mx-0 slide-down">
-                    <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=400" alt="Cover" class="w-full rounded-2xl shadow-xl border-4 border-white dark:border-gray-900 object-cover aspect-[2/3]">
+                    <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?w=400" alt="Cover" class="w-full rounded-2xl shadow-2xl border-4 border-white dark:border-gray-900 object-cover aspect-[2/3]">
                     <div class="mt-4 flex flex-col gap-2">
                         <button class="btn btn-primary w-full py-3 rounded-xl shadow-manga text-lg font-bold">Read First Chapter</button>
                         <button class="btn btn-outline-primary w-full py-2 rounded-xl text-sm flex gap-2 justify-center items-center">
@@ -35,18 +58,18 @@
                 </div>
 
                 <!-- Info -->
-                <div class="flex-1 mt-4 md:mt-24 fade-up">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="badge bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Ongoing</span>
-                        <a href="#" class="badge badge-outline hover:bg-manga-primary hover:text-white transition-colors">Action</a>
-                        <a href="#" class="badge badge-outline hover:bg-manga-primary hover:text-white transition-colors">Fantasy</a>
+                <div class="flex-1 mt-4 md:mt-20 fade-up">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-green-500/20 text-green-400 border border-green-500/30 font-bold px-3">Ongoing</span>
+                        <a href="#" class="badge badge-outline border-white/20 text-white/80 hover:bg-manga-primary hover:text-white transition-colors">Action</a>
+                        <a href="#" class="badge badge-outline border-white/20 text-white/80 hover:bg-manga-primary hover:text-white transition-colors">Fantasy</a>
                     </div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-2">Shadow Sovereign</h1>
-                    <p class="text-xl text-gray-500 mb-6">By <span class="text-manga-primary">Author Name</span> | Translated by <span class="font-semibold text-gray-700 dark:text-gray-300">Team Alpha</span></p>
+                    <h1 class="text-4xl md:text-6xl font-black mb-3 text-white drop-shadow-lg">Shadow Sovereign</h1>
+                    <p class="text-xl text-white/70 mb-8 font-medium">By <span class="text-purple-400">Author Name</span> | <span class="opacity-60">Translated by</span> <span class="text-white">Team Alpha</span></p>
 
-                    <div class="glass-panel p-6 rounded-2xl mb-8">
-                        <h3 class="font-bold text-lg mb-2">Synopsis</h3>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                    <div class="glass-panel p-8 rounded-3xl mb-8 backdrop-blur-md border-white/10">
+                        <h3 class="font-bold text-xl mb-3 text-white">Synopsis</h3>
+                        <p class="text-gray-300 leading-relaxed text-sm md:text-base opacity-90">
                             In a world where gates connect reality to dungeons filled with monsters, ordinary people awakened with powers are known as "Hunters." Sung Jin-Woo is known as the weakest hunter of all mankind. One day, after surviving a horrific double dungeon, he awakens with a mysterious system that allows him to level up indefinitely.
                         </p>
                     </div>

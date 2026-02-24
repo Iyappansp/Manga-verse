@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MangaVerse | Home</title>
     <meta name="description" content="Read, translate, and publish top manga on MangaVerse.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,10 +30,10 @@
         <section class="hero-gradient relative overflow-hidden py-20 lg:py-32">
             <div class="container mx-auto px-4 text-center z-10 relative">
                 <span class="badge badge-outline text-manga-primary border-manga-primary mb-6 inline-block slide-down">New Releases Weekly</span>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight fade-up stagger-1">
-                    Discover. <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-800">Translate.</span> Publish.
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight fade-up stagger-1 text-gray-900 dark:text-white">
+                    Discover. <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-800 dark:from-purple-400 dark:to-purple-300">Translate.</span> Publish.
                 </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 fade-up stagger-2">
+                <p class="text-xl text-gray-800 dark:text-gray-200 max-w-2xl mx-auto mb-10 fade-up stagger-2 font-medium">
                     Join the premium ecosystem for manga readers and translators. Experience high-quality translations with our seamless reading platform.
                 </p>
                 <div class="flex justify-center gap-4 fade-up stagger-3">
@@ -237,6 +238,40 @@
                         <div class="text-gray-500 dark:text-gray-400 font-medium">Monthly Readers</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Popular Genres Section -->
+        <section class="py-24 container mx-auto px-4 reveal-on-scroll">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Explore by Vibe</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">From heart-pounding action to cozy slice-of-life, find your next obsession.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <a href="genres.html" class="p-8 rounded-[2rem] bg-orange-50 dark:bg-orange-950/20 text-center hover-lift border border-orange-100 dark:border-orange-900/30 group">
+                    <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">⚔️</div>
+                    <h4 class="font-bold text-orange-700 dark:text-orange-400">Action</h4>
+                </a>
+                <a href="genres.html" class="p-8 rounded-[2rem] bg-blue-50 dark:bg-blue-950/20 text-center hover-lift border border-blue-100 dark:border-blue-900/30 group">
+                    <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">🔮</div>
+                    <h4 class="font-bold text-blue-700 dark:text-blue-400">Fantasy</h4>
+                </a>
+                <a href="genres.html" class="p-8 rounded-[2rem] bg-pink-50 dark:bg-pink-950/20 text-center hover-lift border border-pink-100 dark:border-pink-900/30 group">
+                    <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">💖</div>
+                    <h4 class="font-bold text-pink-700 dark:text-pink-400">Romance</h4>
+                </a>
+                <a href="genres.html" class="p-8 rounded-[2rem] bg-purple-50 dark:bg-purple-950/20 text-center hover-lift border border-purple-100 dark:border-purple-900/30 group">
+                    <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">🎭</div>
+                    <h4 class="font-bold text-purple-700 dark:text-purple-400">Drama</h4>
+                </a>
+                <a href="genres.html" class="p-8 rounded-[2rem] bg-green-50 dark:bg-green-950/20 text-center hover-lift border border-green-100 dark:border-green-900/30 group">
+                    <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">🌿</div>
+                    <h4 class="font-bold text-green-700 dark:text-green-400">Slice</h4>
+                </a>
+                <a href="genres.html" class="p-8 rounded-[2rem] bg-gray-50 dark:bg-gray-900 text-center hover-lift border border-gray-200 dark:border-gray-800 group">
+                    <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">➡️</div>
+                    <h4 class="font-bold text-gray-700 dark:text-gray-400">All 50+</h4>
+                </a>
             </div>
         </section>
 

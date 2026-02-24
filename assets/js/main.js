@@ -13,7 +13,7 @@ const headerHTML = `
             <!-- Center: Nav -->
             <div class="hidden lg:flex items-center justify-center space-x-3 xl:space-x-6 flex-1 px-2 nav-links overflow-hidden text-sm xl:text-base">
                 <a href="index.html" class="nav-item">Home</a>
-                <a href="home-2.html" class="nav-item whitespace-nowrap">Home-2</a>
+                <a href="home-2.html" class="nav-item whitespace-nowrap">Projects</a>
                 <a href="about.html" class="nav-item">About</a>
                 <a href="library.html" class="nav-item">Library</a>
                 <a href="genres.html" class="nav-item">Genres</a>
