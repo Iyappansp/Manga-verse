@@ -1,17 +1,17 @@
 // Shared Reusable Header and Footer
 const headerHTML = `
-<nav class="glass-header fixed w-full z-50 transition-all duration-300">
+<nav class="glass-header fixed w-full z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 py-2">
     <div class="w-full px-4 sm:px-6 lg:px-10">
         <div class="flex justify-between items-center h-16 relative">
             <!-- Left: Logo -->
             <div class="flex items-center flex-shrink-0">
                 <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-14 md:h-16 w-auto max-w-[200px] lg:max-w-[250px] object-contain">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-10 md:h-12 w-auto max-w-[200px] lg:max-w-[250px] object-contain transition-all">
                 </a>
             </div>
 
             <!-- Center: Nav -->
-            <div class="hidden lg:flex items-center justify-center space-x-3 xl:space-x-6 flex-1 px-2 nav-links overflow-hidden text-sm xl:text-base">
+            <div class="hidden lg:flex items-center justify-center space-x-3 xl:space-x-6 flex-1 px-2 nav-links overflow-hidden">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="home-2.html" class="nav-item whitespace-nowrap">Projects</a>
                 <a href="about.html" class="nav-item">About</a>
@@ -32,9 +32,9 @@ const headerHTML = `
                     RTL
                 </button>
                 
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="login.html" class="btn btn-outline-primary btn-sm rounded-full px-4">Login</a>
-                    <a href="dashboard.html" class="btn btn-primary btn-sm rounded-full px-4 shadow-manga">Dashboard</a>
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="login.html" class="btn btn-outline-primary py-2.5 rounded-full px-5 text-sm font-bold">Login</a>
+                    <a href="dashboard.html" class="btn btn-primary py-2.5 rounded-full px-5 text-sm font-bold shadow-manga">Dashboard</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -217,10 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (headerNav) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
-                headerNav.classList.add('py-0', 'shadow-sm', 'bg-white/80', 'dark:bg-gray-900/80', 'backdrop-blur-md');
+                headerNav.classList.add('py-0', 'shadow-md');
                 headerNav.classList.remove('py-2');
             } else {
-                headerNav.classList.remove('py-0', 'shadow-sm', 'bg-white/80', 'dark:bg-gray-900/80', 'backdrop-blur-md');
+                headerNav.classList.remove('py-0', 'shadow-md');
                 headerNav.classList.add('py-2');
             }
         });
