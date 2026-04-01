@@ -2,11 +2,11 @@
 const headerHTML = `
 <nav class="glass-header fixed w-full z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 py-2">
     <div class="w-full px-4 sm:px-6 lg:px-10">
-        <div class="flex justify-between items-center h-16 relative">
+        <div class="flex justify-between items-center h-20 md:h-24 relative">
             <!-- Left: Logo -->
-            <div class="flex items-center flex-shrink-0">
+            <div class="flex items-center flex-shrink-0 h-full">
                 <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-10 md:h-12 w-auto max-w-[200px] lg:max-w-[250px] object-contain transition-all">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-14 md:h-16 lg:h-20 w-auto max-w-[250px] lg:max-w-[300px] object-contain transition-all">
                 </a>
             </div>
 
@@ -73,7 +73,7 @@ const footerHTML = `
             <!-- Brand -->
             <div>
                 <a href="index.html" class="flex items-center mb-4 hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-16 md:h-20 w-auto max-w-[300px] object-contain">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-20 md:h-24 lg:h-32 w-auto max-w-[400px] object-contain">
                 </a>
                 <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
                     Premium Manga & Comic Translation Platform.<br>

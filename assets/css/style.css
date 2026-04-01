@@ -228,8 +228,8 @@ body {
 
 /* Main Spacing */
 main {
-  padding-top: 5rem; /* Account for fixed header */
-  min-height: calc(100vh - 5rem - 300px); /* header and footer approx height adjust */
+  padding-top: 6rem; /* Increased for larger header */
+  min-height: calc(100vh - 6rem - 300px);
 }
 
 .no-pt {
