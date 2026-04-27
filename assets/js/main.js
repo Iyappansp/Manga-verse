@@ -4,14 +4,14 @@ const headerHTML = `
     <div class="w-full px-4 sm:px-6 lg:px-10">
         <div class="flex justify-between items-center h-20 md:h-24 relative">
             <!-- Left: Logo -->
-            <div class="flex items-center flex-shrink-0 h-full">
+            <div class="flex items-center flex-1 h-full">
                 <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-14 md:h-16 lg:h-20 w-auto max-w-[250px] lg:max-w-[300px] object-contain transition-all">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-16 md:h-20 lg:h-24 w-auto max-w-[280px] lg:max-w-[320px] object-contain transition-all dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
                 </a>
             </div>
 
             <!-- Center: Nav -->
-            <div class="hidden lg:flex items-center justify-center space-x-3 xl:space-x-6 flex-1 px-2 nav-links overflow-hidden">
+            <div class="hidden lg:flex items-center justify-center space-x-4 xl:space-x-8 px-2 nav-links flex-shrink-0">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="home-2.html" class="nav-item whitespace-nowrap">Projects</a>
                 <a href="about.html" class="nav-item">About</a>
@@ -24,7 +24,7 @@ const headerHTML = `
             </div>
 
             <!-- Right: Controls & Auth -->
-            <div class="flex items-center gap-2 lg:gap-4 flex-shrink-0 relative z-10">
+            <div class="flex items-center justify-end gap-3 lg:gap-5 flex-1 relative z-10">
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Theme">
                     <!-- Sun/Moon icon injected via JS depending on state -->
                 </button>
@@ -33,8 +33,8 @@ const headerHTML = `
                 </button>
                 
                 <div class="hidden lg:flex items-center gap-3">
-                    <a href="login.html" class="btn btn-outline-primary py-2.5 rounded-full px-5 text-sm font-bold">Login</a>
-                    <a href="dashboard.html" class="btn btn-primary py-2.5 rounded-full px-5 text-sm font-bold shadow-manga">Dashboard</a>
+                    <a href="login.html" class="btn btn-outline-primary py-2.5 rounded-full px-6 text-sm font-bold transition-all hover:shadow-lg">Login</a>
+                    <a href="dashboard.html" class="btn btn-primary py-2.5 rounded-full px-6 text-sm font-bold shadow-manga transition-all hover:shadow-lg hover:-translate-y-0.5">Dashboard</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -57,9 +57,9 @@ const headerHTML = `
             <a href="pricing.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Pricing</a>
             <a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">FAQ</a>
             <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
-            <div class="pt-4 flex flex-col gap-2">
-                <a href="login.html" class="btn btn-outline-primary w-full text-center rounded-full">Login</a>
-                <a href="dashboard.html" class="btn btn-primary w-full text-center rounded-full shadow-manga">Dashboard</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="login.html" class="btn btn-outline-primary w-full text-center rounded-full py-2.5 font-bold transition-all hover:shadow-lg">Login</a>
+                <a href="dashboard.html" class="btn btn-primary w-full text-center rounded-full py-2.5 font-bold shadow-manga transition-all hover:shadow-lg hover:-translate-y-0.5">Dashboard</a>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@ const footerHTML = `
             <!-- Brand -->
             <div>
                 <a href="index.html" class="flex items-center mb-4 hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-20 md:h-24 lg:h-32 w-auto max-w-[400px] object-contain">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-24 md:h-28 lg:h-36 w-auto max-w-[400px] object-contain dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
                 </a>
                 <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
                     Premium Manga & Comic Translation Platform.<br>
