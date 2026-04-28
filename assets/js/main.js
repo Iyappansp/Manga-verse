@@ -2,16 +2,16 @@
 const headerHTML = `
 <nav class="glass-header fixed w-full z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 py-2">
     <div class="w-full px-4 sm:px-6 lg:px-10">
-        <div class="flex justify-between items-center h-20 md:h-24 relative">
+        <div class="flex justify-between items-center h-16 md:h-20 relative">
             <!-- Left: Logo -->
             <div class="flex items-center flex-1 h-full">
                 <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-16 md:h-20 lg:h-24 w-auto max-w-[280px] lg:max-w-[320px] object-contain transition-all dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-12 md:h-14 lg:h-16 w-auto max-w-[240px] lg:max-w-[280px] object-contain transition-all dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
                 </a>
             </div>
 
             <!-- Center: Nav -->
-            <div class="hidden lg:flex items-center justify-center space-x-4 xl:space-x-8 px-2 nav-links flex-shrink-0">
+            <div class="hidden lg:flex items-center justify-center gap-6 xl:gap-8 px-4 nav-links flex-shrink-0">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="home-2.html" class="nav-item whitespace-nowrap">Projects</a>
                 <a href="about.html" class="nav-item">About</a>

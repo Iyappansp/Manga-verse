@@ -200,9 +200,10 @@ body {
 /* Utilities */
 .nav-item {
   color: #1a1b1e; /* Darker for better contrast in light mode */
-  font-weight: 600; /* Slightly bolder */
-  transition: color 0.2s;
-  font-size: 1.05rem; /* Larger font size */
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 0.875rem; /* Standard text-sm size for consistency */
+  letter-spacing: 0.02em;
 }
 
 .nav-item:hover {
@@ -211,7 +212,7 @@ body {
 
 .nav-item.active {
   color: hsl(var(--primary));
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .dark .nav-item {
@@ -228,8 +229,8 @@ body {
 
 /* Main Spacing */
 main {
-  padding-top: 6rem; /* Increased for larger header */
-  min-height: calc(100vh - 6rem - 300px);
+  padding-top: 5rem; /* Adjusted for smaller header */
+  min-height: calc(100vh - 5rem - 300px);
 }
 
 .no-pt {
