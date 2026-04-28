@@ -2,11 +2,11 @@
 const headerHTML = `
 <nav class="glass-header fixed w-full z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 py-2">
     <div class="w-full px-4 sm:px-6 lg:px-10">
-        <div class="flex justify-between items-center h-16 md:h-20 relative">
+        <div class="flex justify-between items-center h-20 md:h-24 relative">
             <!-- Left: Logo -->
             <div class="flex items-center flex-1 h-full">
                 <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-12 md:h-14 lg:h-16 w-auto max-w-[240px] lg:max-w-[280px] object-contain transition-all dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-14 md:h-18 lg:h-20 w-auto max-w-[280px] lg:max-w-[320px] object-contain transition-all dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
                 </a>
             </div>
 
@@ -73,7 +73,7 @@ const footerHTML = `
             <!-- Brand -->
             <div>
                 <a href="index.html" class="flex items-center mb-4 hover:opacity-80 transition-opacity">
-                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-24 md:h-28 lg:h-36 w-auto max-w-[400px] object-contain dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
+                    <img src="assets/logo.png?v=14" alt="MangaVerse Logo" class="h-32 md:h-40 lg:h-52 w-auto max-w-[500px] object-contain dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] dark:brightness-[1.15]">
                 </a>
                 <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
                     Premium Manga & Comic Translation Platform.<br>
